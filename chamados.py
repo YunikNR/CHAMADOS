@@ -108,16 +108,17 @@ def abrir():
       print(f"ID<{chamado["id"]}> {chamado["usuario"]}: {chamado["titulo"]} | PRIORIDADE: {chamado["prioridade"]} | STATUS: {chamado["status"]}")
 
 def resolver():
-  id = input("Qual o id? ")
+  id = int(input("Qual o id? "))
   for chamado in chamados:
-    if id.lower() in chamado["id"]:
+    if id == chamado["id"]:
       chamado["status"] = "Em progresso"
 
 def fechar():
-  id = input("Qual o id? ")
+  id = int(input("Qual o id? "))
   for chamado in chamados:
-    if id.lower() in chamado["id"]:
+    if id == chamado["id"]:
       chamado["status"] = "Fechado"
+      print(f"ID<{chamado["id"]}> {chamado["usuario"]}: {chamado["titulo"]} | PRIORIDADE: {chamado["prioridade"]} | STATUS: {chamado["status"]}")
 
 while True:
   print("\n---\n Lista de Chamados \n---\n")
